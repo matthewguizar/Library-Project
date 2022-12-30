@@ -13,46 +13,46 @@ export const Carousel = () => {
                 <div className="carousel-inner">
                     <div className="carousel-item active">
                         <div className="row d-flex justify-content-center align-item-center">
-                            <ReturnBook/>
-                            <ReturnBook/>
-                            <ReturnBook/>
+                            <ReturnBook />
+                            <ReturnBook />
+                            <ReturnBook />
                         </div>
                     </div>
-                    <div className="carousel-item">
-                        <div className="row d-flex justify-content-center align-item-center">
-                            <ReturnBook/>
-                            <ReturnBook/>
-                            <ReturnBook/>
-                        </div>
-                    </div>
-                    <div className="carousel-item">
-                        <div className="row d-flex justify-content-center align-item-center">
-                        <ReturnBook/>
-                        <ReturnBook/>
-                        <ReturnBook/>
-                        </div>
-                    </div>
-                    <button className="carousel-control-prev" type="button"
-                        data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Previous</span>
-                    </button>
-                    <button className="carousel-control-next" type="button"
-                        data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Next</span>
-                    </button>
                 </div>
+                <div className="carousel-item">
+                    <div className="row d-flex justify-content-center align-item-center">
+                        <ReturnBook />
+                        <ReturnBook />
+                        <ReturnBook />
+                    </div>
+                </div>
+                <div className="carousel-item">
+                    <div className="row d-flex justify-content-center align-item-center">
+                        <ReturnBook />
+                        <ReturnBook />
+                        <ReturnBook />
+                    </div>
+                </div>
+                <button className="carousel-control-prev" type="button"
+                    data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span className="visually-hidden">Previous</span>
+                </button>
+                <button className="carousel-control-next" type="button"
+                    data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span className="visually-hidden">Next</span>
+                </button>
+            </div>
 
-                {/* mobile */}
-                <div className="d-lg-none mt-3">
-                    <div className="row d-flex justify-content-center align-items-center">
-                        <ReturnBook/>
-                    </div>
-                    <div className="homepage-carousel-title mt-3">
-                        <a className="btn btn-outline-secondary btn-lg" href="#">View More</a>
-                    </div>
+            {/* mobile */}
+            <div className="d-lg-none mt-3">
+                <div className="row d-flex justify-content-center align-items-center">
+                    <ReturnBook />
                 </div>
+            </div>
+            <div className="homepage-carousel-title mt-3">
+                <a className="btn btn-outline-secondary btn-lg" href="#">View More</a>
             </div>
         </div>
     )
