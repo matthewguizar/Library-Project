@@ -1,5 +1,6 @@
 import { ReturnBook } from "./ReturnBook"
 
+
 export const Carousel = () => {
     return (
         <div className="container mt-5" style={{ height: 550 }}>
@@ -9,7 +10,7 @@ export const Carousel = () => {
             <div id="carouselExampleControls" className="carousel carousel-dark slide mt-5
             d-none d-lg-block" data-bs-interval="false">
 
-                {/* desktop */}
+                {/* Desktop */}
                 <div className="carousel-inner">
                     <div className="carousel-item active">
                         <div className="row d-flex justify-content-center align-item-center">
@@ -18,13 +19,13 @@ export const Carousel = () => {
                             <ReturnBook />
                         </div>
                     </div>
-                </div>
                 <div className="carousel-item">
                     <div className="row d-flex justify-content-center align-item-center">
                         <ReturnBook />
                         <ReturnBook />
                         <ReturnBook />
                     </div>
+                </div>
                 </div>
                 <div className="carousel-item">
                     <div className="row d-flex justify-content-center align-item-center">
@@ -45,7 +46,7 @@ export const Carousel = () => {
                 </button>
             </div>
 
-            {/* mobile */}
+            {/* Mobile */}
             <div className="d-lg-none mt-3">
                 <div className="row d-flex justify-content-center align-items-center">
                     <ReturnBook />
@@ -55,5 +56,5 @@ export const Carousel = () => {
                 <a className="btn btn-outline-secondary btn-lg" href="#">View More</a>
             </div>
         </div>
-    )
+    );
 }
