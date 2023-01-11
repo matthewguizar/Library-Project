@@ -1,4 +1,4 @@
-package com.example.springbootlibrary.controller;
+package com.example.springbootlibrary.entity.controller;
 
 
 import com.example.springbootlibrary.entity.Book;
@@ -26,5 +26,11 @@ public class BookController {
     public Boolean checkBookByUser(@RequestParam Long bookId) {
         String userEmail = "test@email.com";
         return bookService.checkoutBookByUser(userEmail, bookId);
+    }
+
+    @GetMapping("/secure/currentloans/count")
+    public int currentLoansCount(){
+        String userEmail = "test@email.com";
+        return bookService.currentLoansCount(userEmail);
     }
 }
