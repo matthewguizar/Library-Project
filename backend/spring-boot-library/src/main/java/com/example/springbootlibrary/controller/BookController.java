@@ -1,4 +1,4 @@
-package com.example.springbootlibrary.entity.controller;
+package com.example.springbootlibrary.controller;
 
 
 import com.example.springbootlibrary.entity.Book;
@@ -16,11 +16,6 @@ public class BookController {
         this.bookService = bookService;
     }
 
-    @PutMapping("/secure/checkout")
-    public Book checkoutBook (@RequestParam Long bookId) throws Exception {
-        String userEmail = "test@email.com";
-        return bookService.checkoutBook(userEmail, bookId);
-    }
 
     @GetMapping("/secure/ischeckedout/byuser")
     public Boolean checkBookByUser(@RequestParam Long bookId) {
@@ -32,5 +27,10 @@ public class BookController {
     public int currentLoansCount(){
         String userEmail = "test@email.com";
         return bookService.currentLoansCount(userEmail);
+    }
+    @PutMapping("/secure/checkout")
+    public Book checkoutBook (@RequestParam Long bookId) throws Exception {
+        String userEmail = "test@email.com";
+        return bookService.checkoutBook(userEmail, bookId);
     }
 }

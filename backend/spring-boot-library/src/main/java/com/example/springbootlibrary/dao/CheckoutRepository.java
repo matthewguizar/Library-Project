@@ -1,10 +1,12 @@
 package com.example.springbootlibrary.dao;
 
 import com.example.springbootlibrary.entity.Checkout;
-import org.hibernate.annotations.Check;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+
 import java.util.List;
+
+
 
 public interface CheckoutRepository extends JpaRepository<Checkout, Long> {
 

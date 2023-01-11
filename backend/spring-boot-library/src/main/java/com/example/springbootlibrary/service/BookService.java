@@ -5,6 +5,7 @@ import com.example.springbootlibrary.dao.BookRepository;
 import com.example.springbootlibrary.dao.CheckoutRepository;
 import com.example.springbootlibrary.entity.Book;
 import com.example.springbootlibrary.entity.Checkout;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
