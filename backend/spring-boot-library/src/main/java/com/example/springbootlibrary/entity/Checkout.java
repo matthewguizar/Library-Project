@@ -1,7 +1,9 @@
 package com.example.springbootlibrary.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
+
+
 
 @Entity
 @Table(name = "checkout")

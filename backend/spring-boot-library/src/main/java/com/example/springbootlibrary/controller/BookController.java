@@ -3,10 +3,11 @@ package com.example.springbootlibrary.controller;
 
 import com.example.springbootlibrary.entity.Book;
 import com.example.springbootlibrary.service.BookService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
 @CrossOrigin("http://localhost:3000")
+@RestController
 @RequestMapping("/api/books")
 public class BookController {
 
