@@ -2,13 +2,15 @@ import { Link } from "react-router-dom";
 import BookModel from "../../models/BookModel";
 import { LeaveAReview } from "../Utils/LeaveAReview";
 
-export const CheckoutAndReviewBox: React.FC<{ book: BookModel | undefined, mobile: boolean , 
-    currentLoansCount: number, isAuthenticated: any, isCheckedOut: boolean, 
-    checkoutBook: any, isReviewLeft: boolean}> = (props) => {
+export const CheckoutAndReviewBox: React.FC<{
+    book: BookModel | undefined, mobile: boolean,
+    currentLoansCount: number, isAuthenticated: any, isCheckedOut: boolean,
+    checkoutBook: any, isReviewLeft: boolean, submitReview: any
+}> = (props) => {
 
     function buttonRender() {
         if (props.isAuthenticated) {
-            if (!props.isCheckedOut && props.currentLoansCount < 5 ){
+            if (!props.isCheckedOut && props.currentLoansCount < 5) {
                 return (<button onClick={() => props.checkoutBook()} className="btn btn-success btn-lg">Checkout</button>)
             } else if (props.isCheckedOut) {
                 return (<p><b>book checked out. enjoy!</b></p>)
@@ -19,25 +21,25 @@ export const CheckoutAndReviewBox: React.FC<{ book: BookModel | undefined, mobil
         return (<Link to={"/login"} className="btn btn-success btn-lg">Sign in</Link>)
     }
 
-    function reviewRender(){
-        if (props.isAuthenticated && !props.isReviewLeft){
-            return(
-                <p>
-                    <LeaveAReview/>
-                </p>
-            )
-        } else if (props.isAuthenticated && props.isReviewLeft){
+    function reviewRender() {
+        if (props.isAuthenticated && !props.isReviewLeft) {
             return (
-            <p>
-                <b>thank you for your review</b>
-            </p>
+                <div>
+                    <LeaveAReview submitReview={props.submitReview} />
+                </div>
+            )
+        } else if (props.isAuthenticated && props.isReviewLeft) {
+            return (
+                <div>
+                    <b>thank you for your review</b>
+                </div>
             )
         }
         return (
-        <div>
-            <hr/>
-            <p>sign in to be able to leave a review</p>
-        </div>)
+            <div>
+                <hr />
+                <p>sign in to be able to leave a review</p>
+            </div>)
     }
 
     return (

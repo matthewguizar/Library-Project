@@ -15,7 +15,7 @@ export const LatestReview: React.FC<{
                 {props.reviews.length > 0 ?
                     <>
                         {props.reviews.slice(0, 3).map(eachReview => (
-                            <Review review={eachReview} key={eachReview.id}/>
+                            <Review review={eachReview} key={eachReview.id} />
                         ))}
                         <div className='m-3'>
                             <Link type='button' className='btn main-color btn-md text-white' to='#'>
