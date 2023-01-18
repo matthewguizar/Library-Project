@@ -237,12 +237,14 @@ export const BookCheckoutPage = () => {
         if (book?.id) {
             bookId = book.id;
         }
+
         const reviewRequestModel = new ReviewRequestModel(starInput, bookId, reviewDescription);
-        const url = `http://localhost:8080/api/reviews/secure`
+        const url = `http://localhost:8080/api/reviews/secure`;
         const requestOptions = {
             method: 'POST',
             headers: {
-                Authorization: `Bearer ${authState?.accessToken?.accessToken}`
+                Authorization: `Bearer ${authState?.accessToken?.accessToken}`,
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(reviewRequestModel)
         };
