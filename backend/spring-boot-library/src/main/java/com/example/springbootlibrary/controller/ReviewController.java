@@ -1,6 +1,5 @@
 package com.example.springbootlibrary.controller;
 
-import com.example.springbootlibrary.entity.Review;
 import com.example.springbootlibrary.requestmodels.ReviewRequest;
 import com.example.springbootlibrary.service.ReviewService;
 import com.example.springbootlibrary.utils.ExtractJWT;

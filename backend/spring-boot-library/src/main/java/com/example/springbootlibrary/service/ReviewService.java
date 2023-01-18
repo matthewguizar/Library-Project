@@ -2,22 +2,29 @@ package com.example.springbootlibrary.service;
 
 import com.example.springbootlibrary.dao.BookRepository;
 import com.example.springbootlibrary.dao.ReviewRepository;
+import com.example.springbootlibrary.entity.Book;
 import com.example.springbootlibrary.entity.Review;
 import com.example.springbootlibrary.requestmodels.ReviewRequest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
+
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.Optional;
 
 @Service
 @Transactional
 public class ReviewService {
 
     private final ReviewRepository reviewRepository;
+    private final BookRepository bookRepository;
 
-    public ReviewService(ReviewRepository reviewRepository) {
+    @Autowired
+    public ReviewService(ReviewRepository reviewRepository, BookRepository bookRepository) {
         this.reviewRepository = reviewRepository;
+        this.bookRepository = bookRepository;
     }
 
     public void postReview(String userEmail, ReviewRequest reviewRequest) throws Exception {
@@ -28,8 +35,8 @@ public class ReviewService {
         }
 
         Review review = new Review();
-        review.setBookId(reviewRequest.getBookId());
         review.setRating(reviewRequest.getRating());
+        review.setBookId(reviewRequest.getBookId());
         review.setUserEmail(userEmail);
 
         if (reviewRequest.getReviewDescription().isPresent()){
@@ -43,6 +50,7 @@ public class ReviewService {
     }
 
     public Boolean userReviewListed(String userEmail, Long bookId){
+
 
         Review validateReview = reviewRepository.findByUserEmailAndBookId(userEmail, bookId);
         if (validateReview != null ){
